@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dnm-paper"
+version = "0.1.0"
+description = "Reference implementation for the DNM paper experiments."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "torch",
+    "transformers",
+    "eckity",
+]
+
+[tool.setuptools]
+packages = ["dnm_paper", "dnm_paper.experiments", "dnm_paper.mutation", "dnm_paper.problems"]
