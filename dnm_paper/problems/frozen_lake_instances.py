@@ -1,0 +1,64 @@
+DEFAULT_8X8_MAP = [
+    "SFFFFFFF",
+    "FFFFFFFF",
+    "FFFHFFFF",
+    "FFFFFHFF",
+    "FFFHFFFF",
+    "FHHFFFHF",
+    "FHFFHFHF",
+    "FFFHFFFG",
+]
+
+RANDOM_10X10_MAP = [
+    "SFHFFFFHFF",
+    "FFFHHFFFFF",
+    "FFFHFFFFHH",
+    "FFHHHFHFFF",
+    "FFFFFFFFFF",
+    "FFHFFFFFHF",
+    "HFFFFFFFFF",
+    "FFFFHFFFFF",
+    "HFFFFFFFFF",
+    "FHHHFFFHFG",
+]
+
+RANDOM_7X7_MAP = [
+    "SFFHFFF",
+    "FFHFHFF",
+    "FFFHFFF",
+    "HHFHFFF",
+    "HFFFFFF",
+    "FFFFFFH",
+    "FFFFFFG",
+]
+
+RANDOM_9X9_MAP = [
+    "SFFFFHHFF",
+    "HFFHFFFHF",
+    "FFFFFFFHF",
+    "FFFHFFFFF",
+    "HHFFFFFFF",
+    "FFHFFFFHH",
+    "FFHFFFFFF",
+    "FFFFFFFFF",
+    "HHFFHFHHG",
+]
+
+RANDOM_8X8_MAP = [
+    "SHFFFFFF",
+    "FFFFHFFH",
+    "FFFFFFFF",
+    "FFFFHFFF",
+    "FFFFFFHH",
+    "FHFFFFHH",
+    "FHFFFFFF",
+    "FFFFHFFG",
+]
+
+FROZEN_LAKE_INSTANCES = {
+    "default_8x8": DEFAULT_8X8_MAP,
+    "random_10x10": RANDOM_10X10_MAP,
+    "random_7x7": RANDOM_7X7_MAP,
+    "random_9x9": RANDOM_9X9_MAP,
+    "random_8x8": RANDOM_8X8_MAP,
+}

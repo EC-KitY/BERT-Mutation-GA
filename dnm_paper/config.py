@@ -5,6 +5,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RESULTS_ROOT = PROJECT_ROOT / "experiments" / "artificial_ant" / "runs"
 DEFAULT_MAPS_DIR = PROJECT_ROOT / "artifical_ant_maps"
+DEFAULT_FROZEN_LAKE_RESULTS_ROOT = PROJECT_ROOT / "experiments" / "frozen_lake" / "runs"
 
 
 @dataclass(frozen=True)
@@ -26,7 +27,7 @@ class MutationModelConfig:
 @dataclass(frozen=True)
 class EvolutionConfig:
     generations: int = 1000
-    population_size: int = 6
+    population_size: int = 100
     mutation_probability: float = 0.4
     crossover_probability: float = 0.75
     crossover_n_points: int = 2
@@ -43,3 +44,16 @@ class EvolutionConfig:
             "santafe_trail.txt": 400,
         }
     )
+
+
+@dataclass(frozen=True)
+class FrozenLakeConfig:
+    generations: int = 100
+    population_size: int = 100
+    mutation_probability: float = 0.4
+    crossover_probability: float = 0.75
+    crossover_n_points: int = 2
+    tournament_size: int = 4
+    runs: int = 1
+    total_episodes: int = 2000
+    output_root: Path = DEFAULT_FROZEN_LAKE_RESULTS_ROOT
