@@ -6,8 +6,8 @@ The paper proposes a domain-independent mutation operator for genetic algorithms
 
 In the paper, the method is evaluated on four domains: Frozen Lake, Artificial Ant, Graph Coloring, and Unweighted Set Cover. The reported results show faster convergence and better final fitness than standard mutation baselines and an adaptive operator-selection baseline, while maintaining meaningful population diversity.
     
-![alt text](images/bert_ga.png "Title")
-
+![alt text](images/bert_ga.png "Convergence Plots")
+![alt text](images/p_values.png "P Values")
 
 ## Requirements
 
