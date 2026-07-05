@@ -8,6 +8,54 @@ The paper proposes a domain-independent mutation operator for genetic algorithms
 
 In the paper, the method is evaluated on four domains: Frozen Lake, Artificial Ant, Graph Coloring, and Unweighted Set Cover. The reported results show faster convergence and better final fitness than standard mutation baselines and an adaptive operator-selection baseline, while maintaining meaningful population diversity.
 
+## Installation
+
+```bash
+pip install eckity-bert-ga
+```
+
+## Using the operator
+
+Import the public API from `eckity_bert_ga`:
+
+```python
+from eckity_bert_ga import (
+    BertMutation,
+    EckityCustomMutation,
+    GAIntegerStringVectorCreator,
+)
+```
+
+Create the BERT mutation model and wrap it as an EC-KitY operator:
+
+```python
+population_size = 100
+
+bert_mutation = BertMutation(
+    max_int_val=MAX_GENE_VALUE,
+    get_fitness_func=evaluate_vector,
+    context_size=INDIVIDUAL_LENGTH + 1,
+    mask_probability=0.1,
+)
+
+mutation_operator = EckityCustomMutation(
+    mutation_operator=bert_mutation,
+    population_size=population_size,
+    probability=0.4,
+)
+```
+
+Add `mutation_operator` to an EC-KitY subpopulation's `operators_sequence`. The BERT model is initialized locally from configuration and does not download pretrained model weights.
+
+### Compatibility
+
+- Python 3.9 or newer
+- EC-KitY 0.4.x
+- NumPy 2.0.2 or newer
+- SciPy 1.13.0 or newer
+- PyTorch 2.7.1 or newer
+- Transformers 4.50.0 or newer
+
 ## Results from the paper
 
 ### Fitness by generation
@@ -77,13 +125,13 @@ The code depends on:
 - `transformers`
 - `eckity`
 
-### Installation
+### Installing for repository development
 
 From the repository root:
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install -e .
+python -m pip install -e ".[dev]"
 ```
 
 ## Running the experiments
@@ -112,6 +160,10 @@ python -m dnm_paper.experiments.frozen_lake --generations 10 --runs 1 --populati
 
 By default, results are written under `experiments/artificial_ant/runs/<map_name>/bert_mutation/<run_id>/results.json`.
 Frozen Lake results are written under `experiments/frozen_lake/runs/<instance_name>/bert_mutation/<run_id>/results.json`.
+
+The experiment modules, benchmark maps, datasets, and result figures are repository resources and are not included in the `eckity-bert-ga` wheel.
+
+Release preparation and manual PyPI upload commands are documented in [`RELEASING.md`](RELEASING.md).
 
 ## Project structure
 
